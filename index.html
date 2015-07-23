@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="blogApp">
+<head>
+<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8" />
+<title>Blog Title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="blog.js"></script>
+<link href=”css_filename.css” rel=”stylesheet” type=”text/css” />
+</head>
+<body ng-controller="blogCtrl">
+	<div id="socialmedia">
+		<h3>Social Media</h3>
+		<ul>
+			<li ng-repeat="sm in socialmedia">{{sm}}</li>
+		</ul>
+	</div>
+</body>
+</html>
