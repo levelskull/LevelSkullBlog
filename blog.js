@@ -1,19 +1,19 @@
-var blog = angular.module('blogApp',[]);
-
-
-blog.controller('blogCtrl', function ($scope,$http){
+angular.module('blogApp', []).controller('blogCtrl', function ($scope, $http) {
+	$scope.site = null;
 	
-		//$scope.socialmedia = [{'name':'twitter'},{'name':'facebook'}];
-		
-		$scope.socialmedia = [];
-		
-		$http({method:'GET', url:'feed.php', params:[{'cat_nbr':'2'}]})
-			.success(function(data, status)
-				{
-					$scope.articles = data;
-					$scope.status = status;
-					
-					console.log($scope.articles);
-				})
 	
+	$scope.getSite = function()
+	{
+		$http({
+			method: 'GET',
+			url:'https://dl.dropboxusercontent.com/u/22513949/LevelSkull.txt'
+		}).success(function (rs)
+		{
+			$scope.site = rs;
+			console.log($scope.site);
+		}
+		)
+	}
+	
+	$scope.getSite();	
 });

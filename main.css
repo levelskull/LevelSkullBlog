@@ -1,0 +1,48 @@
+body
+{
+	width:90%;
+	font-size: 1.5em;
+	color: ghostwhite;
+	background-color: black;
+}
+
+a
+{
+	color:white;
+}
+
+#header
+{
+	width:95%;
+	font-size: 2em	;
+	margin: auto;
+	text-align: center;
+	border-bottom: solid red thin;
+}
+
+
+#footer
+{
+	clear:both;
+	width:95%;
+	font-size: .25em	;
+	margin: auto;
+	text-align: center;
+	border-top: solid red thin;
+}
+
+#content
+{
+	padding:10px;
+}
+#content img
+{
+	float:left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+#siteBody
+{
+	width:700px;
+	margin:auto;
+}

@@ -1,0 +1,10 @@
+{
+	"SiteTitle":"Level Skull Media and Blogs",
+	"Links":[{"Title":"My Undead Life","Link":"http://www.myundeadlife.com"},
+		{"Title":"Life of Rock","Link":"http://www.lifeofrock.com"}],
+	"Description":"What's your interest?  You like horror stories read to you, try My Undead Life.  Do you like silly comics about talking inanimate objects, try Life of Rock.  How about fun fast stories, try our Quick Short Stories.  We have something for everyone.  Check below to find all of our web sites:",
+	"Articles":[
+		{"Title":"My Undead Life","Link":"http://www.myundeadlife.com","Description":"A diary of a non-brain eating ghoul on the run.  Will he be animated for much longer or will the hunter find him."},
+		{"Title":"Life of Rock","Link":"http://www.lifeofrock.com","Description":"A Rock and his Cactus making fun of everyday life.  Nothing is safe from the sarcasim and wit of Rock and Cactus."},
+		{"Title":"Quick Short Stories","Link":"http://www.quickshortstories.com","Description":"Five minute or less short stories.  You will find romance, comedy, horror, strange oddball storis and action.  This is the home of Prunhiline and Britina stories."}]
+}

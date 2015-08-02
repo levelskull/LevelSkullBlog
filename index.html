@@ -2,17 +2,38 @@
 <html ng-app="blogApp">
 <head>
 <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8" />
-<title>Blog Title</title>
+<title>{{site.SiteTitle}}</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 <script src="blog.js"></script>
 <link href=”css_filename.css” rel=”stylesheet” type=”text/css” />
 </head>
 <body ng-controller="blogCtrl">
-	<div id="socialmedia">
-		<h3>Social Media</h3>
-		<ul>
-			<li ng-repeat="sm in socialmedia">{{sm}}</li>
-		</ul>
+	<div id="header">
+		{{site.SiteHeader}}
 	</div>
+	<div id="siteBody">
+	
+	<div id="content">
+	{{site.Description}}
+	<hr>
+	<div class="sitesDesc" ng-repeat="article in site.Articles">
+	<!--<img src="{{article.Image}}"  />-->
+	<h3>{{article.Title}}</h3>
+	{{article.Description}}
+	<br>
+	<br><a ng-href="{{article.Link}}" target="_blank">{{article.Title}}</a>
+	<hr>	
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="footer">
+		Copyright Level Skull 2015
+	</div>
+	
+	
+	
 </body>
 </html>
