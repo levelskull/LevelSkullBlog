@@ -5,7 +5,7 @@
 <title>{{site.SiteTitle}}</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-<script src="blog.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
 <link href=”css_filename.css” rel=”stylesheet” type=”text/css” />
 </head>
 <body ng-controller="blogCtrl">
@@ -14,7 +14,12 @@
 	</div>
 	<div id="siteBody">
 	
-	<div id="content">
+	<div id="con" ng-hide="showMain">
+	<span ng-click="showMain=true">xx</span>
+	{{Content.Title}}
+	</div>
+	
+	<div id="content" ng-hide="!showMain">
 	{{site.Description}}
 	<hr>
 	<div class="sitesDesc" ng-repeat="article in site.Articles">
@@ -23,6 +28,8 @@
 	{{article.Description}}
 	<br>
 	<br><a ng-href="{{article.Link}}" target="_blank">{{article.Title}}</a>
+	
+	<span ng-click="GetContent(article.Link)">{{article.Link}}</span>
 	<hr>	
 	</div>
 	
@@ -33,6 +40,57 @@
 		Copyright Level Skull 2015
 	</div>
 	
+	<script>
+angular.module('blogApp', ['ngSanitize']).controller('blogCtrl',['$scope','$http','$sce', function ($scope, $http,$sce) {
+	$scope.site = null;
+	$scope.showMain = true;
+	$scope.Content = "";
+	
+	$scope.test = "<h3>Test</h3>"
+	
+	$scope.getSite = function()
+	{
+		$http({
+			method: 'GET',
+			url:'https://dl.dropboxusercontent.com/u/22513949/LevelSkullBlog.txt'
+		}).success(function (rs)
+		{
+			$scope.site = rs;
+			//console.log($scope.site);
+		}
+		)
+	}
+	
+	$scope.getContent = function(path)
+	{
+		$http({
+			method: 'GET',
+			url:path
+		}).success(function (rs)
+		{
+			$scope.Content = rs;
+			//console.log($scope.site);
+		}
+		)
+	}
+	
+	$scope.prepHTML = function(html)
+	{
+		console.log(html);
+		return $sce.trustAsHtml(html);	
+	};
+	
+	$scope.GetContent = function($v)
+	{
+		alert($v);
+		$scope.showMain = false;
+		$scope.getContent($v);
+	}
+	
+	
+	$scope.getSite();	
+}]);	
+</script>
 	
 	
 </body>
